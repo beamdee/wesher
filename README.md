@@ -1,11 +1,11 @@
-# dockerised wesher
-
+# dockerised wireguard mesh VPN setup for docker nodes
 
 Setup a mesh wireguard VPN on docker nodes, quick and easy.
 
 
 
 #1 First node (can be any node, just to create a node with a key).
+
 docker-compose.yml
 ```
 version: '3.5'
