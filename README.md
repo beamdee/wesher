@@ -1,6 +1,12 @@
 # dockerised wireguard mesh VPN setup for docker nodes
 
+
+**Status: currently not working as docker needs privilges and even setting ALL doesn't allow wg to be created.
+Can be run on host, so not sure if this needs to be dockerised. Might continue this later.**
+
+
 Setup a mesh wireguard VPN on docker nodes, quick and easy.
+
 
 
 
