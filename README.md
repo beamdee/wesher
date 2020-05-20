@@ -33,7 +33,7 @@ docker-compose.yml
 version: '3.5'
 services:
    vpn:
-     image: wesher
+     image: bram/wesher
      ports:
       - "7946:7946"
       - "7946:7946/udp"
