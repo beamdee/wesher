@@ -19,16 +19,18 @@ services:
    vpn:
      image: bram/wesher
      ports:
-      - "7946:7946"
-      - "7946:7946/udp"
-      - "51820:51820/udp"
+     - "<PUBLICIPOFTHISNODE>:7946:7946"
+     - "<PUBLICIPOFTHISNODE>:7946:7946/udp"
+     - "<PUBLICIPOFTHISNODE>:51820:51820/udp"
      restart: always
      tty: true
      network_mode: "host"
+     cap_add:
+     - NET_ADMIN
+     - SYS_MODULE
      environment:
-      - WESHER_BIND_ADDR=<PUBLICIPOFTHISNODE>
-      # leave empty to generate one, you can find it in the logs
-      - WESHER_CLUSTER_KEY=<FILLINKEYFROMFIRSTNODEHERE>
+     # leave empty to generate one, you can find it in the logs
+     - WESHER_CLUSTER_KEY=<FILLINKEYFROMFIRSTNODEHERE>
 ```
 
 
@@ -41,17 +43,19 @@ services:
    vpn:
      image: bram/wesher
      ports:
-      - "7946:7946"
-      - "7946:7946/udp"
-      - "51820:51820/udp"
+     - "<PUBLICIPOFTHISNODE>:7946:7946"
+     - "<PUBLICIPOFTHISNODE>:7946:7946/udp"
+     - "<PUBLICIPOFTHISNODE>:51820:51820/udp"
      restart: always
      tty: true
      network_mode: "host"
+     cap_add:
+     - NET_ADMIN
+     - SYS_MODULE
      environment:
-      - WESHER_BIND_ADDR=<PUBLICIPOFTHISNODE>
-      - WESHER_CLUSTER_KEY=<FILLINKEYFROMFIRSTNODEHERE>
-      - WESHER_JOIN=<IPOFFIRSTNODE,IPSOFOTHERNODESIFANY>
-     command: /usr/sbin/wesher -
+     # leave empty to generate one, you can find it in the logs
+     - WESHER_CLUSTER_KEY=<FILLINKEYFROMFIRSTNODEHERE>
+     - WESHER_JOIN=<COMMASEPERATEDLISTOFOTHERNODEIPS>,IPSOFOTHERNODESIFANY
 ```
 
 
